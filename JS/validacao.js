@@ -13,7 +13,9 @@ const numero = +chute
     if(numero === numeroSecreto) {
       documento.body.innerHTML = `
       <h1>Você acertou!</h1>
-      <h3> O número secreto era ${numeroSecreto}`
+      <h3> O número secreto era ${numeroSecreto}
+      
+      <button id="jogar-novamente class= "btn-jogar">Jogar Novamente</button>`
     } else if ( numero > numeroSecreto){
       elementoChute.innerHTML += `
       <div> O número secreto é menor<i class="fa-solid fa-down=long"></i></div>
@@ -28,5 +30,13 @@ function chuteForInvalido(numero) {
     return Number.isNaN(numero)  
   }
 
-function numeroForMaiorOuMenorQueOValorPermitido(numero)
+function numeroForMaiorOuMenorQueOValorPermitido(numero){
    return  numero > maiorValor || numero < menorValor
+}
+
+document.body.addEventListener('click', e =>{
+    if(e.target.id == 'jogar-novamente'){
+      window.location.reload()
+    }
+})
+                            
